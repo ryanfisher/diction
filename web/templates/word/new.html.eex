@@ -1,0 +1,6 @@
+<h2>New word</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: word_path(@conn, :create) %>
+
+<%= link "Back", to: word_path(@conn, :index) %>

@@ -1,0 +1,24 @@
+<h2>Listing words</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for word <- @words do %>
+    <tr>
+
+      <td class="text-right">
+        <%= link "Show", to: word_path(@conn, :show, word), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: word_path(@conn, :edit, word), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: word_path(@conn, :delete, word), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New word", to: word_path(@conn, :new) %>
