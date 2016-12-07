@@ -8,20 +8,23 @@ class QuestionSection extends React.Component {
   render() {
     return (
       <div className="question-section">
-        <Question text="What is the correct choice?" />
-        {this.choices()}
+        <Question text={this.props.question} />
+        <div className="choices">
+          {this.choices()}
+        </div>
       </div>
     )
   }
 
   choices() {
     return (
-      <div className="choices">
-        <Choice text="Choice 1" />
-        <Choice text="Choice 2" />
-        <Choice text="Choice 3" />
-        <Choice text="Choice 4" />
-      </div>
+      this.props.choices.map(choice =>
+        <Choice
+          key={choice.id}
+          selected={this.props.selectedChoice}
+          onChoiceSelect={this.props.onChoiceSelect}
+          {...choice} />
+      )
     )
   }
 }

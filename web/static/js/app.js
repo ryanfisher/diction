@@ -22,10 +22,17 @@ import "phoenix_html"
 
 import React from "react"
 import ReactDOM from "react-dom"
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import dictionApp from './reducers/index'
 
-import QuestionSection from './components/QuestionSection';
+import QuestionContainer from './containers/QuestionContainer';
+
+let store = createStore(dictionApp)
 
 ReactDOM.render(
-  <QuestionSection/>,
+  <Provider store={store}>
+    <QuestionContainer/>
+  </Provider>,
   document.getElementById("hello-world")
 )
