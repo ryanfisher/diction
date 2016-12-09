@@ -21,7 +21,8 @@ class QuestionSection extends React.Component {
       this.props.choices.map(choice =>
         <Choice
           key={choice.id}
-          selected={this.props.selectedChoice}
+          selected={this.props.selectedChoice === choice.id}
+          correct={this.props.correctChoice === choice.id}
           onChoiceSelect={this.props.onChoiceSelect}
           {...choice} />
       )

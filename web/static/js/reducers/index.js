@@ -8,6 +8,7 @@ const initialState = {
     {id: 3, text: "Choice 3"},
     {id: 4, text: "Choice 4"}
   ],
+  correctChoice: 3,
   selectedChoice: null
 }
 

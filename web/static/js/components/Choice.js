@@ -20,8 +20,11 @@ class Choice extends React.Component {
   }
 
   className() {
-    let classes = "panel panel-default";
-    return this.props.selected === this.props.id ? classes + " selected" : classes;
+    let classes = "panel panel-default choice";
+    if (this.props.selected) {
+      classes += (this.props.correct ? " correct" : " wrong")
+    }
+    return classes;
   }
 }
 
