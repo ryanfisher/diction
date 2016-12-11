@@ -1,12 +1,12 @@
-import { SELECT_ANSWER } from '../actions/index'
+import { SELECT_ANSWER, NEXT_QUESTION } from '../actions/index'
 
 const initialState = {
-  question: "What is the correct choice?",
+  question: "Abrogate",
   choices: [
-    {id: 1, text: "Choice 1"},
-    {id: 2, text: "Choice 2"},
-    {id: 3, text: "Choice 3"},
-    {id: 4, text: "Choice 4"}
+    {id: 1, text: "establish firmly in a position"},
+    {id: 2, text: "cuddle; snuggle"},
+    {id: 3, text: "cancel; deny; repeal"},
+    {id: 4, text: "shun; eschew"}
   ],
   correctChoice: 3,
   selectedChoice: null
