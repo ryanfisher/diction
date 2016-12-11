@@ -1,7 +1,7 @@
 import React from "react"
-import ReactDOM from "react-dom"
 
 import Question from "./Question"
+import NextButton from "./NextButton"
 import Choice from "./Choice"
 
 class QuestionSection extends React.Component {
@@ -12,8 +12,15 @@ class QuestionSection extends React.Component {
         <div className="choices">
           {this.choices()}
         </div>
+        {this.nextButtonRender()}
       </div>
     )
+  }
+
+  nextButtonRender() {
+    if (this.props.selectedChoice) {
+      return <NextButton onNextClick={this.props.onNextClick} />
+    }
   }
 
   choices() {
