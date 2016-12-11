@@ -1,4 +1,4 @@
-import { SELECT_ANSWER, NEXT_QUESTION } from '../actions/index'
+import { SELECT_ANSWER, NEXT_QUESTION, FETCH_QUESTION_SUCCESS } from '../actions/index'
 
 const initialState = {
   question: "Abrogate",
@@ -9,7 +9,8 @@ const initialState = {
     {id: 4, text: "shun; eschew"}
   ],
   correctChoice: 3,
-  selectedChoice: null
+  selectedChoice: null,
+  nextQuestion: null
 }
 
 function dictionApp(state = initialState, action) {
@@ -18,6 +19,18 @@ function dictionApp(state = initialState, action) {
       return Object.assign({}, state, {
         selectedChoice: action.choice_id
       });
+    case NEXT_QUESTION:
+      return Object.assign({}, state, {
+        question: state.nextQuestion.question,
+        choices: state.nextQuestion.choices,
+        correctChoice: state.nextQuestion.correctChoice,
+        selectedChoice: null,
+        nextQuestion: null
+      })
+    case FETCH_QUESTION_SUCCESS:
+      return Object.assign({}, state, {
+        nextQuestion: action.response
+      })
     default:
       return state;
   }

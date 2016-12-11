@@ -23,12 +23,13 @@ import "phoenix_html"
 import React from "react"
 import ReactDOM from "react-dom"
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import dictionApp from './reducers/index'
+import thunkMiddleware from 'redux-thunk'
 
 import QuestionContainer from './containers/QuestionContainer';
 
-let store = createStore(dictionApp)
+let store = createStore(dictionApp, applyMiddleware(thunkMiddleware))
 
 ReactDOM.render(
   <Provider store={store}>

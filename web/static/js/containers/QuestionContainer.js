@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { selectAnswer, nextQuestion } from '../actions/index'
+import { selectAnswer, nextQuestion, fetchQuestion } from '../actions/index'
 import QuestionSection from '../components/QuestionSection'
 
 const mapStateToProps = (state) => {
@@ -13,7 +13,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChoiceSelect: (choiceId) => { dispatch(selectAnswer(choiceId)) },
+    onChoiceSelect: (choiceId) => {
+      dispatch(selectAnswer(choiceId)),
+      dispatch(fetchQuestion())
+    },
     onNextClick: () => { dispatch(nextQuestion()) }
   }
 }
