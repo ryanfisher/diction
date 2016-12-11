@@ -1,5 +1,9 @@
 /* This file is for your main application css. */
 
+.choice {
+  cursor: pointer;
+}
+
 .choice.wrong {
   color: #a94442;
   background-color: #f2dede;
