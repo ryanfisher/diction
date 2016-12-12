@@ -20,8 +20,9 @@ defmodule Diction.Router do
     resources "/words", WordController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Diction do
-  #   pipe_through :api
-  # end
+  scope "/api", Diction.Api do
+    pipe_through :api
+
+    get "/question/next", QuestionController, :next
+  end
 end

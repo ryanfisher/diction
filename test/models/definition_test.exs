@@ -3,7 +3,7 @@ defmodule Diction.DefinitionTest do
 
   alias Diction.Definition
 
-  @valid_attrs %{definition: "some content"}
+  @valid_attrs %{definition: "some content", type: "verb", word_id: 1}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
