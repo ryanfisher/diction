@@ -18,7 +18,7 @@ class QuestionSection extends React.Component {
   }
 
   nextButtonRender() {
-    if (this.props.selectedChoice) {
+    if (this.props.nextQuestion) {
       return <NextButton onNextClick={this.props.onNextClick} />
     }
   }
