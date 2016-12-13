@@ -21,8 +21,8 @@ function dictionApp(state = initialState, action) {
       });
     case NEXT_QUESTION:
       return Object.assign({}, state, {
-        question: state.nextQuestion.question,
-        choices: state.nextQuestion.choices,
+        question: state.nextQuestion.word,
+        choices: state.nextQuestion.definitions,
         correctChoice: state.nextQuestion.correctChoice,
         selectedChoice: null,
         nextQuestion: null
